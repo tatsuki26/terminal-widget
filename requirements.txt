@@ -1,0 +1,3 @@
+rich>=13
+# battery.py が bleak の内部 API を使うため固定
+bleak==3.0.2

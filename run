@@ -1,0 +1,7 @@
+#!/bin/zsh
+# 初回のみ .venv を作って依存を入れ、ウィジェットを起動する。Ctrl-C で終了。
+cd "${0:A:h}" || exit 1
+if [[ ! -x .venv/bin/python ]]; then
+  python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt || exit 1
+fi
+exec .venv/bin/python widget.py
